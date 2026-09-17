@@ -44,12 +44,38 @@ Read the guide in order the first time. After that, each page stands alone.
 9. [Make it yours](docs/guide/09-make-it-yours.md) — customize skills and playbooks
 10. [Recipes and pitfalls](docs/guide/10-recipes-and-pitfalls.md) — prompts to copy, mistakes to skip
 
+## Slash commands
+
+Add the plugin's skills directory to `skills.external_dirs` so each skill registers as a slash command:
+
+```bash
+hermes config set skills.external_dirs '["plugins/pstack/skills"]'
+```
+
+Then in any chat session:
+
+| Command | What it does |
+|---------|--------------|
+| `/poteto-mode` | Load the orchestrator (task routing, principles, delegation). |
+| `/how` | Codebase exploration. "How does X work?" |
+| `/architect` | Design types and boundaries before building. |
+| `/interrogate` | Adversarial multi-reviewer code review. |
+| `/swarm` | Fan out parallel workers. |
+| `/unslop` | Strip AI writing patterns from prose. |
+
+Append an instruction after the command: `/how how does auth work in this repo`
+
+Skills are also loadable programmatically via `skill_view(name='pstack:<skill>')`.
+
 ## Install
 
 Symlink or copy into your Hermes profile plugins directory:
 
 ```bash
 ln -s /path/to/pstack ~/.hermes/profiles/<profile>/plugins/pstack
+
+# Enable slash commands
+hermes config set skills.external_dirs '["plugins/pstack/skills"]'
 ```
 
 Hermes loads it on next session start.
