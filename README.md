@@ -29,6 +29,21 @@ Loaded via `skill_view(name='pstack:poteto-mode', file_path='playbooks/<name>.md
 - `autonomous-run.md` — long task with falsifiable exit predicate
 - `figure-it-out.md` — large/cross-cutting work, design your own workflow
 
+## Guide
+
+Read the guide in order the first time. After that, each page stands alone.
+
+1. [Set up pstack](docs/guide/01-setup.md) — install, pick models, first task
+2. [Route work through poteto-mode](docs/guide/02-poteto-mode.md) — give it a goal, watch it pick a playbook
+3. [Understand the code](docs/guide/03-understand.md) — pstack:how before you edit anything
+4. [Design the change](docs/guide/04-design.md) — pstack:architect and pstack:interrogate before code locks in
+5. [Build and clean](docs/guide/05-build-and-clean.md) — build playbooks, TDD, unslop
+6. [Verify and ship](docs/guide/06-verify-and-ship.md) — prove behavior, open a PR, merge
+7. [Run work overnight](docs/guide/07-overnight.md) — autonomous contracts, decision logs
+8. [Principles](docs/guide/08-principles.md) — the full set in detail
+9. [Make it yours](docs/guide/09-make-it-yours.md) — customize skills and playbooks
+10. [Recipes and pitfalls](docs/guide/10-recipes-and-pitfalls.md) — prompts to copy, mistakes to skip
+
 ## Install
 
 Symlink or copy into your Hermes profile plugins directory:
